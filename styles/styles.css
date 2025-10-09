@@ -1,2 +1,71 @@
 @import url("css-reset.css");
 @import url("variables.css");
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+
+  padding: var(--space-sm);
+  margin-inline: auto;
+}
+
+.survey-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.survey-title {
+  text-align: center;
+}
+
+#catSurveyForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.cat-info,
+.owner-info,
+.cat-behavior {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+
+  padding: var(--space-sm);
+}
+
+label,
+input,
+button {
+  display: block;
+  display: inherit;
+
+  width: 100%;
+}
+
+.checkbox-group,
+.radio-group {
+  width: 100%;
+}
+
+.checkbox-group input,
+.radio-group input,
+.checkbox-group label,
+.radio-group label {
+  display: inline-block;
+  width: fit-content;
+}
+
+@media (width > 640px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media (width > 980px) {
+  .container {
+    padding: var(--space-md);
+  }
+}
