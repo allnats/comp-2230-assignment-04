@@ -26,6 +26,20 @@
       <!-- Main Survey Content -->
       <main class="survey-container">
         <form action="#" id="catSurveyForm" novalidate>
+          <!-- Owner Information -->
+          <fieldset class="owner-info">
+            <legend>Owner Information</legend>
+            <label for="ownerFirstName">First Name</label>
+            <input type="text" id="ownerFirstName" name="ownerFirstName" />
+
+            <label for="ownerLastName">Last Name</label>
+            <input type="text" id="ownerLastName" name="ownerLastName" />
+
+            <label for="ownerEmail">Email address</label>
+            <input type="email" id="ownerEmail" name="ownerEmail" />
+          </fieldset>
+
+          <!-- Cat Information -->
           <button id="catSurveySubmitBtn" type="submit">Submit Survey</button>
         </form>
       </main>
