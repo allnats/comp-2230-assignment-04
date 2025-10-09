@@ -1,0 +1,39 @@
+:root {
+  --font--2xs: clamp(0.6944rem, 0.684rem + 0.0465vw, 0.72rem);
+  --font--xs: clamp(0.8333rem, 0.8061rem + 0.1212vw, 0.9rem);
+  --font-sm: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem);
+  --font-md: clamp(1.2rem, 1.1156rem + 0.375vw, 1.4063rem);
+  --font-lg: clamp(1.44rem, 1.31rem + 0.5778vw, 1.7578rem);
+  --font-xl: clamp(1.728rem, 1.536rem + 0.8532vw, 2.1973rem);
+  --font-2xl: clamp(2.0736rem, 1.7983rem + 1.2236vw, 2.7466rem);
+  --font-3xl: clamp(2.4883rem, 2.1018rem + 1.718vw, 3.4332rem);
+  --font-4xl: clamp(2.986rem, 2.4519rem + 2.3737vw, 4.2915rem);
+  --font-5xl: clamp(3.5832rem, 2.8545rem + 3.2386vw, 5.3644rem);
+
+  /* @link https://utopia.fyi/space/calculator?c=360,16,1.2,1240,18,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+  --space-3xs: clamp(0.25rem, 0.2244rem + 0.1136vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4744rem + 0.1136vw, 0.5625rem);
+  --space-xs: clamp(0.75rem, 0.6989rem + 0.2273vw, 0.875rem);
+  --space-sm: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem);
+  --space-md: clamp(1.5rem, 1.4233rem + 0.3409vw, 1.6875rem);
+  --space-lg: clamp(2rem, 1.8977rem + 0.4545vw, 2.25rem);
+  --space-xl: clamp(3rem, 2.8466rem + 0.6818vw, 3.375rem);
+  --space-2xl: clamp(4rem, 3.7955rem + 0.9091vw, 4.5rem);
+  --space-3xl: clamp(6rem, 5.6932rem + 1.3636vw, 6.75rem);
+
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+
+  --font-heading: "Gabarito", Arial, Helvetica, sans-serif;
+  --font-body: "Playpen sans", Arial, Helvetica, sans-serif;
+
+  --bg-01: #fbf1c7;
+  --bg-02: #f9f5d7;
+  --bg-03: #ebdbb2;
+  --fg-01: #3c3836;
+  --fg-02: #928374;
+
+  --bg-button: #ebdbb2;
+}
