@@ -11,6 +11,128 @@
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
+    <div class="container">
+      <!-- Survey Header -->
+      <header class="survey-header">
+        <h1 class="survey-title">Winnipeg House Cat Survey</h1>
+        <p class="survey-description">
+          Is your cat a purr-fect angel or a chaotic menace? We want to know!
+          Fill out this short, interactive survey to log the essential, and
+          often ridiculous, details of life with your feline companion. This
+          survey is mandatory... according to your cat.
+        </p>
+      </header>
+
+      <!-- Main Survey Content -->
+      <main class="survey-container">
+        <form action="#" id="catSurveyForm" novalidate>
+          <!-- Owner Information -->
+          <fieldset class="owner-info">
+            <legend>Owner Information</legend>
+            <label for="ownerFirstName">First Name</label>
+            <input type="text" id="ownerFirstName" name="ownerFirstName" />
+
+            <label for="ownerLastName">Last Name</label>
+            <input type="text" id="ownerLastName" name="ownerLastName" />
+
+            <label for="ownerEmail">Email address</label>
+            <input type="email" id="ownerEmail" name="ownerEmail" />
+          </fieldset>
+
+          <!-- Cat Information -->
+          <fieldset class="cat-info">
+            <legend>Cat Information</legend>
+
+            <label for="catName">Your Cat's Name</label>
+            <input type="text" id="catName" name="catName" />
+
+            <!-- Cat's Gender -->
+            <fieldset class="cat-gender">
+              <legend>Cat's Gender</legend>
+
+              <label for="catGenderMale">Male</label>
+              <input
+                type="radio"
+                id="catGenderMale"
+                name="catGender"
+                value="male" />
+
+              <label for="catGenderFemale">Female</label>
+              <input
+                type="radio"
+                id="catGenderFemale"
+                name="catGender"
+                value="female" />
+
+              <label for="catGenderNA">It's complicated</label>
+              <input
+                type="radio"
+                id="catGenderNA"
+                name="catGender"
+                value="NA" />
+            </fieldset>
+
+            <!-- Cat's Favorite Activity -->
+            <fieldset class="cat-activity">
+              <legend>Your cat's favorite activities</legend>
+
+              <label for="naps">Naps</label>
+              <input type="checkbox" name="cat-activity" id="naps" />
+
+              <label for="zoomies">Zoomies</label>
+              <input type="checkbox" name="cat-activity" id="zoomies" />
+
+              <label for="birdWatch">Bird Watching</label>
+              <input type="checkbox" name="cat-activity" id="birdWatch" />
+
+              <label for="footAmbush">Foot Ambush</label>
+              <input type="checkbox" name="cat-activity" id="footAmbush" />
+
+              <label for="snuggling">Snuggling</label>
+              <input type="checkbox" name="cat-activity" id="snuggling" />
+            </fieldset>
+          </fieldset>
+
+          <!-- Cat's Fur Pattern -->
+          <label for="catCoatPattern">Cat's Coat Pattern</label>
+          <select name="catCoatPattern" id="catCoatPattern">
+            <option value="">--Select your cat's fur pattern--</option>
+            <option value="tuxedo">Tuxedo (Black and White)</option>
+            <option value="tabby">Tabby (Striped)</option>
+            <option value="orange">Orange</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="calico">Calico</option>
+            <option value="siamese">Siamese</option>
+          </select>
+
+          <!-- Cat Naps per Hour -->
+          <label for="catNapHours">
+            How many hours a day does your cat spend napping?
+          </label>
+          <input
+            type="number"
+            min="0"
+            max="24"
+            id="catNapHours"
+            name="catNapHours" />
+
+          <!-- Cat's Spiciness -->
+          <label for="catSpiciness">How spicy is your Cat?</label>
+          <input
+            type="range"
+            id="catSpiciness"
+            name="catSpiciness"
+            min="1"
+            max="5"
+            step="1"
+            value="3"
+            list="catSpicinessMarker" />
+
+          <button id="catSurveySubmitBtn" type="submit">Submit Survey</button>
+        </form>
+      </main>
+    </div>
     <script src="script.js" defer></script>
   </body>
 </html>
