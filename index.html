@@ -29,105 +29,208 @@
           <!-- Owner Information -->
           <fieldset class="owner-info">
             <legend>Owner Information</legend>
-            <label for="ownerFirstName">First Name</label>
-            <input type="text" id="ownerFirstName" name="ownerFirstName" />
+            <div class="input-group">
+              <label for="ownerFirstName">First Name</label>
+              <input type="text" id="ownerFirstName" name="ownerFirstName" />
+              <p class="error-message">Error Message</p>
+            </div>
 
-            <label for="ownerLastName">Last Name</label>
-            <input type="text" id="ownerLastName" name="ownerLastName" />
+            <div class="input-group">
+              <label for="ownerLastName">Last Name</label>
+              <input type="text" id="ownerLastName" name="ownerLastName" />
+              <p class="error-message">Error Message</p>
+            </div>
 
-            <label for="ownerEmail">Email address</label>
-            <input type="email" id="ownerEmail" name="ownerEmail" />
+            <div class="input-group">
+              <label for="ownerEmail">Email address</label>
+              <input type="email" id="ownerEmail" name="ownerEmail" />
+              <p class="error-message">Error Message</p>
+            </div>
           </fieldset>
 
           <!-- Cat Information -->
           <fieldset class="cat-info">
             <legend>Cat Information</legend>
 
-            <label for="catName">Your Cat's Name</label>
-            <input type="text" id="catName" name="catName" />
+            <div class="input-group">
+              <label for="catName">Your Cat's Name</label>
+              <input type="text" id="catName" name="catName" />
+              <p class="error-message">Error Message</p>
+            </div>
 
             <!-- Cat's Gender -->
-            <fieldset class="cat-gender">
-              <legend>Cat's Gender</legend>
+            <div class="cat-gender">
+              <p class="radio-label">Cat's Gender</p>
 
-              <label for="catGenderMale">Male</label>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="catGenderMale"
+                  name="catGender"
+                  value="male" />
+                <label for="catGenderMale">Male</label>
+              </div>
+
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="catGenderFemale"
+                  name="catGender"
+                  value="female" />
+                <label for="catGenderFemale">Female</label>
+              </div>
+
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="catGenderNA"
+                  name="catGender"
+                  value="NA" />
+                <label for="catGenderNA">It's complicated</label>
+              </div>
+
+              <p class="error-message">Error Message</p>
+            </div>
+
+            <div class="cat-age">
+              <p class="radio-label">Approximate Age</p>
+
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="catAgeKitty"
+                  name="catAge"
+                  value="less than a year" />
+                <label for="catAgeKitty">< 1</label>
+              </div>
+
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="catAgeKid"
+                  name="catAge"
+                  value="1 to 3" />
+                <label for="catAgeKid">1 - 3</label>
+              </div>
+
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="catAgeTeen"
+                  name="catAge"
+                  value="4 to 7" />
+                <label for="catAgeTeen">4 - 7</label>
+              </div>
+
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="catAgeAdult"
+                  name="catAge"
+                  value="8 - 12" />
+                <label for="catAgeAdult">8 - 12</label>
+              </div>
+
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="catAgeOld"
+                  name="catAge"
+                  value="immortal" />
+                <label for="catAgeOld">13+</label>
+              </div>
+
+              <p class="error-message">Error Message</p>
+            </div>
+            <div class="color-group">
+              <label for="catCoatColor">Fur Color</label>
               <input
-                type="radio"
-                id="catGenderMale"
-                name="catGender"
-                value="male" />
+                type="color"
+                id="catCoatColor"
+                name="catCoatColor"
+                value="orange" />
 
-              <label for="catGenderFemale">Female</label>
-              <input
-                type="radio"
-                id="catGenderFemale"
-                name="catGender"
-                value="female" />
+              <p class="error-message">Error Message</p>
+            </div>
 
-              <label for="catGenderNA">It's complicated</label>
-              <input
-                type="radio"
-                id="catGenderNA"
-                name="catGender"
-                value="NA" />
-            </fieldset>
+            <!-- Cat's Fur Pattern -->
+            <div class="select-group">
+              <label for="catCoatPattern">Cat's Coat Pattern</label>
+              <select name="catCoatPattern" id="catCoatPattern">
+                <option value="">--Select your cat's fur pattern--</option>
+                <option value="tuxedo">Tuxedo (Black and White)</option>
+                <option value="tabby">Tabby (Striped)</option>
+                <option value="orange">Orange</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="calico">Calico</option>
+                <option value="siamese">Siamese</option>
+              </select>
 
-            <!-- Cat's Favorite Activity -->
-            <fieldset class="cat-activity">
-              <legend>Your cat's favorite activities</legend>
-
-              <label for="naps">Naps</label>
-              <input type="checkbox" name="cat-activity" id="naps" />
-
-              <label for="zoomies">Zoomies</label>
-              <input type="checkbox" name="cat-activity" id="zoomies" />
-
-              <label for="birdWatch">Bird Watching</label>
-              <input type="checkbox" name="cat-activity" id="birdWatch" />
-
-              <label for="footAmbush">Foot Ambush</label>
-              <input type="checkbox" name="cat-activity" id="footAmbush" />
-
-              <label for="snuggling">Snuggling</label>
-              <input type="checkbox" name="cat-activity" id="snuggling" />
-            </fieldset>
+              <p class="error-message">Error Message</p>
+            </div>
           </fieldset>
 
-          <!-- Cat's Fur Pattern -->
-          <label for="catCoatPattern">Cat's Coat Pattern</label>
-          <select name="catCoatPattern" id="catCoatPattern">
-            <option value="">--Select your cat's fur pattern--</option>
-            <option value="tuxedo">Tuxedo (Black and White)</option>
-            <option value="tabby">Tabby (Striped)</option>
-            <option value="orange">Orange</option>
-            <option value="black">Black</option>
-            <option value="white">White</option>
-            <option value="calico">Calico</option>
-            <option value="siamese">Siamese</option>
-          </select>
-
           <!-- Cat Naps per Hour -->
-          <label for="catNapHours">
-            How many hours a day does your cat spend napping?
-          </label>
-          <input
-            type="number"
-            min="0"
-            max="24"
-            id="catNapHours"
-            name="catNapHours" />
+          <fieldset class="cat-behavior">
+            <!-- Cat's Favorite Activity -->
+            <div class="cat-activity">
+              <p class="checkbox-label">Your cat's favorite activities</p>
 
-          <!-- Cat's Spiciness -->
-          <label for="catSpiciness">How spicy is your Cat?</label>
-          <input
-            type="range"
-            id="catSpiciness"
-            name="catSpiciness"
-            min="1"
-            max="5"
-            step="1"
-            value="3"
-            list="catSpicinessMarker" />
+              <div class="checkbox-group">
+                <input type="checkbox" name="cat-activity" id="naps" />
+                <label for="naps">Naps</label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" name="cat-activity" id="zoomies" />
+                <label for="zoomies">Zoomies</label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" name="cat-activity" id="birdWatch" />
+                <label for="birdWatch">Bird Watching</label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" name="cat-activity" id="footAmbush" />
+                <label for="footAmbush">Foot Ambush</label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" name="cat-activity" id="snuggling" />
+                <label for="snuggling">Snuggling</label>
+              </div>
+
+              <p class="error-message">Error Message</p>
+            </div>
+
+            <div class="input-group">
+              <label for="catNapHours">
+                How many hours a day does your cat spend napping?
+              </label>
+              <input
+                type="number"
+                min="0"
+                max="24"
+                id="catNapHours"
+                name="catNapHours" />
+
+              <p class="error-message">Error Message</p>
+            </div>
+
+            <div class="range-group">
+              <!-- Cat's Spiciness -->
+              <label for="catSpiciness">How spicy is your Cat?</label>
+              <input
+                type="range"
+                id="catSpiciness"
+                name="catSpiciness"
+                min="1"
+                max="5"
+                step="1"
+                value="3"
+                list="catSpicinessMarker" />
+
+              <p class="error-message">Error Message</p>
+            </div>
+          </fieldset>
 
           <button id="catSurveySubmitBtn" type="submit">Submit Survey</button>
         </form>
