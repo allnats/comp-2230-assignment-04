@@ -17,22 +17,39 @@ function validateForm() {
     // For debugging purposes. Prints the values in the console.
     debugInputElements(inputElements);
 
+    clearErrorMessages();
     if (ownerFirstName.value.trim() === "") {
         console.error("Please enter a first name.");
+        addErrorMessage(
+            ownerFirstName.parentElement,
+            "Please enter a first name"
+        );
         isValid = false;
     }
 
     if (ownerLastName.value.trim() === "") {
         console.error("Please enter a last name.");
+        addErrorMessage(
+            ownerLastName.parentElement,
+            "Please enter a last name"
+        );
         isValid = false;
     }
 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (ownerEmail.value.trim() === "") {
         console.error("Please enter a email address");
+        addErrorMessage(
+            ownerEmail.parentElement,
+            "Please enter an email address."
+        );
         isValid = false;
     } else if (!emailRegex.test(ownerEmail.value.trim())) {
         console.error("Please enter a valid email address.");
+        addErrorMessage(
+            ownerEmail.parentElement,
+            "Please enter a valid email address."
+        );
         isValid = false;
     }
 
@@ -125,9 +142,19 @@ function getFormInputElements() {
     };
 }
 
-function clearErrorMessages() {}
+function clearErrorMessages() {
+    const errorMessages = document.querySelectorAll(".error-message");
+    for (const el of errorMessages) {
+        el.remove();
+    }
+}
 
-function addErrorMessage(inputElement, errorMessage) {}
+function addErrorMessage(inputParent, errorMessage) {
+    const errorElement = document.createElement("p");
+    errorElement.classList.add("error-message");
+    errorElement.textContent = errorMessage;
+    inputParent.appendChild(errorElement);
+}
 
 const catSurveyForm = document.getElementById("catSurveyForm");
 catSurveyForm.addEventListener("submit", (event) => {
