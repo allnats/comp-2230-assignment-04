@@ -1,7 +1,40 @@
 function validateForm() {
     let isValid = false;
     const inputElements = getFormInputElements();
+    const {
+        ownerFirstName,
+        ownerLastName,
+        ownerEmail,
+        catName,
+        catGender,
+        catAge,
+        catColor,
+        catPattern,
+        catActivity,
+        catNapHours,
+        catSpiciness,
+    } = inputElements;
+    // For debugging purposes. Prints the values in the console.
     debugInputElements(inputElements);
+
+    if (ownerFirstName.value.trim() === "") {
+        console.error("Please enter a first name.");
+        isValid = false;
+    }
+
+    if (ownerLastName.value.trim() === "") {
+        console.error("Please enter a last name.");
+        isValid = false;
+    }
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (ownerEmail.value.trim() === "") {
+        console.error("Please enter a email address");
+        isValid = false;
+    } else if (!emailRegex.test(ownerEmail.value.trim())) {
+        console.error("Please enter a valid email address.");
+        isValid = false;
+    }
 
     return isValid;
 }
