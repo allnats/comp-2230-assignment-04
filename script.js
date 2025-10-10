@@ -1,5 +1,5 @@
 function validateForm() {
-    let isValid = false;
+    let isValid = true;
     const inputElements = getFormInputElements();
     const {
         ownerFirstName,
@@ -33,6 +33,60 @@ function validateForm() {
         isValid = false;
     } else if (!emailRegex.test(ownerEmail.value.trim())) {
         console.error("Please enter a valid email address.");
+        isValid = false;
+    }
+
+    if (catName.value.trim() === "") {
+        console.error("Please enter your cat's name.");
+        isValid = false;
+    }
+
+    if (catGender.value === "") {
+        console.error("Please select your cat's gender.");
+        isValid = false;
+    }
+
+    if (catAge.value === "") {
+        console.error("Please select your cat's age.");
+        isValid = false;
+    }
+
+    if (catColor.value === "") {
+        console.error("Please select your cat's fur color.");
+        isValid = false;
+    }
+
+    if (catPattern.value === "") {
+        console.error("Please select your cat's fur pattern.");
+        isValid = false;
+    }
+
+    const checkedValues = [];
+    for (const box of catActivity) {
+        if (box.checked) checkedValues.push(box.value);
+    }
+
+    if (checkedValues.length === 0) {
+        console.error("Please select at least one activity.");
+        isValid = false;
+    }
+
+    if (catNapHours.value === "") {
+        console.error("Please enter your cat's nap hours.");
+        isValid = false;
+    } else if (isNaN(Number(catNapHours.value))) {
+        console.error("Please enter a valid number.");
+        isValid = false;
+    } else if (
+        Number(catNapHours.value) < 0 ||
+        Number(catNapHours.value) > 24
+    ) {
+        console.error("Please enter a number between 0-24");
+        isValid = false;
+    }
+
+    if (catSpiciness.value === "") {
+        console.error("Please select your cat's spiciness.");
         isValid = false;
     }
 
