@@ -32,16 +32,19 @@
             <div class="input-group">
               <label for="ownerFirstName">First Name</label>
               <input type="text" id="ownerFirstName" name="ownerFirstName" />
+              <p class="error-message">Error Message</p>
             </div>
 
             <div class="input-group">
               <label for="ownerLastName">Last Name</label>
               <input type="text" id="ownerLastName" name="ownerLastName" />
+              <p class="error-message">Error Message</p>
             </div>
 
             <div class="input-group">
               <label for="ownerEmail">Email address</label>
               <input type="email" id="ownerEmail" name="ownerEmail" />
+              <p class="error-message">Error Message</p>
             </div>
           </fieldset>
 
@@ -55,8 +58,8 @@
             </div>
 
             <!-- Cat's Gender -->
-            <fieldset class="cat-gender">
-              <legend>Cat's Gender</legend>
+            <div class="cat-gender">
+              <p class="radio-label">Cat's Gender</p>
 
               <div class="radio-group">
                 <input
@@ -84,11 +87,11 @@
                   value="NA" />
                 <label for="catGenderNA">It's complicated</label>
               </div>
-            </fieldset>
+            </div>
 
             <!-- Cat's Favorite Activity -->
-            <fieldset class="cat-activity">
-              <legend>Your cat's favorite activities</legend>
+            <div class="cat-activity">
+              <p class="checkbox-label">Your cat's favorite activities</p>
 
               <div class="checkbox-group">
                 <input type="checkbox" name="cat-activity" id="naps" />
@@ -110,7 +113,7 @@
                 <input type="checkbox" name="cat-activity" id="snuggling" />
                 <label for="snuggling">Snuggling</label>
               </div>
-            </fieldset>
+            </div>
           </fieldset>
 
           <!-- Cat Naps per Hour -->

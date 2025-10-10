@@ -1,6 +1,6 @@
 :root {
   --font--2xs: clamp(0.6944rem, 0.684rem + 0.0465vw, 0.72rem);
-  --font--xs: clamp(0.8333rem, 0.8061rem + 0.1212vw, 0.9rem);
+  --font-xs: clamp(0.8333rem, 0.8061rem + 0.1212vw, 0.9rem);
   --font-sm: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem);
   --font-md: clamp(1.2rem, 1.1156rem + 0.375vw, 1.4063rem);
   --font-lg: clamp(1.44rem, 1.31rem + 0.5778vw, 1.7578rem);
@@ -26,17 +26,14 @@
   --animate-delay: 1s;
   --animate-repeat: 1;
 
-  --font-heading: "Gabarito", Arial, Helvetica, sans-serif;
-  --font-body: "Playpen sans", Arial, Helvetica, sans-serif;
-
-  --bg-01: #fbf1c7;
-  --bg-02: #f9f5d7;
-  --bg-03: #ebdbb2;
-  --fg-01: #3c3836;
-  --fg-02: #928374;
+  --bg-01: #fff8f0;
+  --bg-card-01: #f5e5d1;
+  --bg-card-02: #f8ca91;
+  --color-fg-text: #212121;
+  --color-fg-subtext: #513e39;
 
   --bg-button: #ebdbb2;
 
-  --font-heading: "Gabarito", Arial, Helvetica, sans-serif;
-  --font-body: "Playpen sans", Arial, Helvetica, sans-serif;
+  --font-body: "Gabarito", Arial, Helvetica, sans-serif;
+  --font-heading: "Playpen sans", Arial, Helvetica, sans-serif;
 }

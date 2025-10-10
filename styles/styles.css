@@ -1,6 +1,94 @@
 @import url("css-reset.css");
 @import url("variables.css");
 
+body {
+  background-color: var(--bg-01);
+}
+
+/* Heading Font */
+h1,
+legend,
+label,
+button {
+  font-family: var(--font-heading);
+  color: var(--color-fg-text);
+}
+
+/* Body Font */
+p,
+input,
+.radio-group label,
+.checkbox-group label,
+select,
+select option {
+  font-family: var(--font-body);
+}
+
+h1 {
+  font-size: var(--font-xl);
+  color: var(--color-fg-subtext);
+}
+
+p {
+  font-size: var(--font-sm);
+}
+
+/* Fieldset Legend Headers */
+legend {
+  font-size: var(--font-lg);
+  font-weight: 600;
+
+  padding: var(--space-xs);
+  border-radius: 20px;
+
+  color: var(--color-fg-subtext);
+  background-color: var(--bg-card-02);
+}
+
+fieldset {
+  border-radius: 10px;
+  padding: var(--space-xs);
+  background-color: var(--bg-card-01);
+  border: 1px solid #513e3944;
+  -webkit-box-shadow: 0px 8px 11px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 8px 11px 5px rgba(0, 0, 0, 0.25);
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: var(--space-md);
+}
+
+.input-group label {
+  font-size: var(--font-md);
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+.error-message {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  margin-left: var(--space-xs);
+
+  color: #970000;
+}
+
+input[type="text"],
+input[type="email"] {
+  font-size: var(--font-md);
+
+  color: var(--color-fg-text);
+  padding: var(--space-3xs) var(--space-xs);
+  border-radius: 10px;
+  border: none;
+}
+
+.survey-container {
+  border-radius: var(--font-sm);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -14,6 +102,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+
+  padding: var(--space-sm);
 }
 
 .survey-title {
@@ -31,7 +121,7 @@
 .cat-behavior {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-md);
+  gap: var(--space-xs);
 
   padding: var(--space-sm);
 }
@@ -61,6 +151,26 @@ button {
 @media (width > 640px) {
   .container {
     width: 70%;
+  }
+
+  .survey-container {
+    padding: var(--space-lg);
+  }
+
+  .owner-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .input-group:has(#ownerEmail) {
+    grid-column: span 2;
+  }
+
+  .cat-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .input-group:has(#catName) {
+    grid-column: span 2;
   }
 }
 
