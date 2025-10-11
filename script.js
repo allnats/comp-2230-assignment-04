@@ -55,26 +55,43 @@ function validateForm() {
 
     if (catName.value.trim() === "") {
         console.error("Please enter your cat's name.");
+        addErrorMessage(catName.parentElement, "Please enter your cat's name.");
         isValid = false;
     }
 
     if (catGender.value === "") {
         console.error("Please select your cat's gender.");
+        addErrorMessage(
+            catGender[0].parentElement,
+            "Please select your cat's gender"
+        );
         isValid = false;
     }
 
     if (catAge.value === "") {
         console.error("Please select your cat's age.");
+        addErrorMessage(
+            catAge[0].parentElement,
+            "Please select your cat's age"
+        );
         isValid = false;
     }
 
     if (catColor.value === "") {
         console.error("Please select your cat's fur color.");
+        addErrorMessage(
+            catColor.parentElement,
+            "Please select your cat's fur color"
+        );
         isValid = false;
     }
 
     if (catPattern.value === "") {
         console.error("Please select your cat's fur pattern.");
+        addErrorMessage(
+            catPattern.parentElement,
+            "Please select your cat's fur pattern"
+        );
         isValid = false;
     }
 
@@ -85,25 +102,46 @@ function validateForm() {
 
     if (checkedValues.length === 0) {
         console.error("Please select at least one activity.");
+        addErrorMessage(
+            catActivity[0].parentElement,
+            "Please select at least one activity."
+        );
         isValid = false;
     }
 
+    console.log(catNapHours.value);
     if (catNapHours.value === "") {
         console.error("Please enter your cat's nap hours.");
+        addErrorMessage(
+            catNapHours.parentElement,
+            "Please enter your cat's nap hours."
+        );
         isValid = false;
     } else if (isNaN(Number(catNapHours.value))) {
         console.error("Please enter a valid number.");
+        addErrorMessage(
+            catNapHours.parentElement,
+            "Please enter a valid number."
+        );
         isValid = false;
     } else if (
         Number(catNapHours.value) < 0 ||
         Number(catNapHours.value) > 24
     ) {
         console.error("Please enter a number between 0-24");
+        addErrorMessage(
+            catNapHours.parentElement,
+            "Please enter a number between 0-24"
+        );
         isValid = false;
     }
 
     if (catSpiciness.value === "") {
         console.error("Please select your cat's spiciness.");
+        addErrorMessage(
+            catSpiciness.parentElement,
+            "Please select your cat's spiciness."
+        );
         isValid = false;
     }
 
