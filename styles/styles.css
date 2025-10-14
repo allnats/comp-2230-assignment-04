@@ -71,13 +71,35 @@ legend {
 }
 
 .form-section-icon svg {
-  display: inherit;
   width: var(--space-lg);
+  stroke-width: 2.5;
+}
+
+label svg,
+.radio-label svg,
+.checkbox-label svg {
+  display: inherit;
+  width: var(--space-md);
   height: auto;
 }
 
 .form-section-title {
   display: block;
+}
+
+.input-group span {
+  display: block;
+}
+
+.input-group label,
+.color-group label,
+.select-group label,
+.range-group label,
+.radio-label,
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
 .input-group,
@@ -91,8 +113,8 @@ legend {
   margin-bottom: var(--space-md);
 }
 
-.cat-gender,
-.cat-activity {
+.radio-group,
+.checkbox-group {
   padding-left: var(--space-xs);
 }
 
