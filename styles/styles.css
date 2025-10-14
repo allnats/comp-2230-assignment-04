@@ -1,6 +1,10 @@
 @import url("css-reset.css");
 @import url("variables.css");
 
+:root {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg-01);
 }

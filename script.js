@@ -1,6 +1,7 @@
 function validateForm() {
     let isValid = true;
     const inputElements = getFormInputElements();
+    let errorList = [];
     const {
         ownerFirstName,
         ownerLastName,
@@ -24,6 +25,7 @@ function validateForm() {
             ownerFirstName.parentElement,
             "Please enter a first name"
         );
+        errorList.push(ownerFirstName);
         isValid = false;
     }
 
@@ -33,6 +35,7 @@ function validateForm() {
             ownerLastName.parentElement,
             "Please enter a last name"
         );
+        errorList.push(ownerLastName);
         isValid = false;
     }
 
@@ -43,6 +46,7 @@ function validateForm() {
             ownerEmail.parentElement,
             "Please enter an email address."
         );
+        errorList.push(ownerEmail);
         isValid = false;
     } else if (!emailRegex.test(ownerEmail.value.trim())) {
         console.error("Please enter a valid email address.");
@@ -50,12 +54,14 @@ function validateForm() {
             ownerEmail.parentElement,
             "Please enter a valid email address."
         );
+        errorList.push(ownerEmail);
         isValid = false;
     }
 
     if (catName.value.trim() === "") {
         console.error("Please enter your cat's name.");
         addErrorMessage(catName.parentElement, "Please enter your cat's name.");
+        errorList.push(catName);
         isValid = false;
     }
 
@@ -65,6 +71,7 @@ function validateForm() {
             catGender[0].parentElement,
             "Please select your cat's gender"
         );
+        errorList.push(catGender);
         isValid = false;
     }
 
@@ -74,6 +81,7 @@ function validateForm() {
             catAge[0].parentElement,
             "Please select your cat's age"
         );
+        errorList.push(catAge);
         isValid = false;
     }
 
@@ -83,6 +91,7 @@ function validateForm() {
             catColor.parentElement,
             "Please select your cat's fur color"
         );
+        errorList.push(catColor);
         isValid = false;
     }
 
@@ -92,6 +101,7 @@ function validateForm() {
             catPattern.parentElement,
             "Please select your cat's fur pattern"
         );
+        errorList.push(catPattern);
         isValid = false;
     }
 
@@ -106,12 +116,14 @@ function validateForm() {
             catActivity[0].parentElement,
             "Please select at least one activity."
         );
+        errorList.push(catActivity);
         isValid = false;
     }
 
-    console.log(catNapHours.value);
+    // console.log(catNapHours.value);
     if (catNapHours.value === "") {
         console.error("Please enter your cat's nap hours.");
+        errorList.push(catNapHours);
         addErrorMessage(
             catNapHours.parentElement,
             "Please enter your cat's nap hours."
@@ -119,6 +131,7 @@ function validateForm() {
         isValid = false;
     } else if (isNaN(Number(catNapHours.value))) {
         console.error("Please enter a valid number.");
+        errorList.push(catNapHours);
         addErrorMessage(
             catNapHours.parentElement,
             "Please enter a valid number."
@@ -129,6 +142,7 @@ function validateForm() {
         Number(catNapHours.value) > 24
     ) {
         console.error("Please enter a number between 0-24");
+        errorList.push(catNapHours);
         addErrorMessage(
             catNapHours.parentElement,
             "Please enter a number between 0-24"
@@ -138,11 +152,16 @@ function validateForm() {
 
     if (catSpiciness.value === "") {
         console.error("Please select your cat's spiciness.");
+        errorList.push(catNapHours);
         addErrorMessage(
             catSpiciness.parentElement,
             "Please select your cat's spiciness."
         );
         isValid = false;
+    }
+
+    if (errorList.length > 0) {
+        errorList[0].scrollIntoView({ block: "center" });
     }
 
     return isValid;
