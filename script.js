@@ -164,12 +164,15 @@ function validateForm() {
         errorList[0].scrollIntoView({ block: "center" });
     }
 
+    errorList.forEach((el) => addErrorOutline(el));
+
     return isValid;
 }
 
 function debugInputElements(inputElements) {
     for (key in inputElements) {
         let value = inputElements[key].value;
+        let type = inputElements[key].type;
         // Check if checkboxes
         if (key === "catActivity") {
             const checkedValues = [];
@@ -178,7 +181,7 @@ function debugInputElements(inputElements) {
             }
             value = checkedValues;
         }
-        console.log(`${key}: ${value}`);
+        console.log(`key: ${key}, type: ${type}, ${value}`);
     }
 }
 
@@ -213,6 +216,14 @@ function addErrorMessage(inputParent, errorMessage) {
     inputParent.appendChild(errorElement);
 }
 
+function addErrorOutline(inputElement) {
+    if (inputElement instanceof HTMLInputElement) {
+        inputElement.classList.add("input-error");
+    } else if (inputElement instanceof RadioNodeList) {
+        // TODO
+    }
+}
+
 const catSurveyForm = document.getElementById("catSurveyForm");
 catSurveyForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -223,4 +234,9 @@ catSurveyForm.addEventListener("submit", (event) => {
     } else {
         console.error("Invalid form!");
     }
+});
+
+const inputGroup = document.querySelectorAll(".input-group input");
+inputGroup.forEach((el) => {
+    el.addEventListener("focus", () => el.classList.remove("input-error"));
 });

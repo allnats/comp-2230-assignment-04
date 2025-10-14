@@ -133,6 +133,10 @@ label svg,
   margin-bottom: var(--space-sm);
 }
 
+.input-error {
+  outline: 2px solid #861717 !important;
+}
+
 .error-message {
   position: absolute;
   width: 100%;
