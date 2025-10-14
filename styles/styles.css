@@ -56,6 +56,30 @@ fieldset {
   box-shadow: 0px 8px 11px 5px rgba(0, 0, 0, 0.25);
 }
 
+legend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.form-section-icon {
+  display: block;
+  /* border: 3px solid var(--color-fg-subtext); */
+  /* width: var(--space-2xl); */
+  /* height: var(--space-2xl); */
+  /* border-radius: 50%; */
+}
+
+.form-section-icon svg {
+  display: inherit;
+  width: var(--space-lg);
+  height: auto;
+}
+
+.form-section-title {
+  display: block;
+}
+
 .input-group,
 .select-group,
 .range-group,
