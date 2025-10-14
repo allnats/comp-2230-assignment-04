@@ -110,7 +110,7 @@ label svg,
 .cat-activity,
 .color-group {
   position: relative;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .radio-group,
@@ -126,7 +126,7 @@ label svg,
 .checkbox-label {
   font-size: var(--font-md);
   font-weight: 500;
-  margin: var(--space-sm) 0;
+  margin-bottom: var(--space-sm);
 }
 
 .error-message {
@@ -134,7 +134,7 @@ label svg,
   width: 100%;
   bottom: 0;
   left: 0;
-  transform: translateY(100%);
+  transform: translateY(105%);
 
   padding: var(--space-3xs);
   border-radius: 10px;
@@ -244,8 +244,11 @@ button {
 
 select {
   /* appearance: none; */
-  width: auto;
-  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* min-width: 0; */
 }
 
 .checkbox-group,

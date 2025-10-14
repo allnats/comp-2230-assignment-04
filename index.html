@@ -69,7 +69,6 @@
                 <span class="label-title">First Name</span>
               </label>
               <input type="text" id="ownerFirstName" name="ownerFirstName" />
-              <p class="error-message">Error Message</p>
             </div>
 
             <div class="input-group">
@@ -95,7 +94,6 @@
                 <span class="label-title">Last Name</span>
               </label>
               <input type="text" id="ownerLastName" name="ownerLastName" />
-              <p class="error-message">Error Message</p>
             </div>
 
             <div class="input-group">
@@ -118,7 +116,6 @@
                 <span class="label-title">Email address</span>
               </label>
               <input type="email" id="ownerEmail" name="ownerEmail" />
-              <p class="error-message">Error Message</p>
             </div>
           </fieldset>
 
@@ -149,7 +146,6 @@
             <div class="input-group">
               <label for="catName">Your Cat's Name</label>
               <input type="text" id="catName" name="catName" />
-              <p class="error-message">Error Message</p>
             </div>
 
             <!-- Cat's Gender -->
@@ -173,7 +169,7 @@
                     <circle cx="12" cy="11" r="5" />
                   </svg>
                 </span>
-                <span class="label-title">Cat's Gender</span>
+                <span class="label-title">Gender</span>
               </p>
 
               <div class="radio-group">
@@ -193,17 +189,6 @@
                   value="female" />
                 <label for="catGenderFemale">Female</label>
               </div>
-
-              <div class="radio-group">
-                <input
-                  type="radio"
-                  id="catGenderNA"
-                  name="catGender"
-                  value="NA" />
-                <label for="catGenderNA">It's complicated</label>
-              </div>
-
-              <p class="error-message">Error Message</p>
             </div>
 
             <div class="cat-age">
@@ -231,7 +216,7 @@
                     <path d="M16 18h.01" />
                   </svg>
                 </span>
-                <span class="label-title">Approximate Age</span>
+                <span class="label-title">Age</span>
               </p>
 
               <div class="radio-group">
@@ -278,8 +263,6 @@
                   value="immortal" />
                 <label for="catAgeOld">13+</label>
               </div>
-
-              <p class="error-message">Error Message</p>
             </div>
             <div class="color-group">
               <label for="catCoatColor">
@@ -307,10 +290,8 @@
               <input
                 type="color"
                 id="catCoatColor"
-                name="catCoatColor"
+                name="catColor"
                 value="orange" />
-
-              <p class="error-message">Error Message</p>
             </div>
 
             <!-- Cat's Fur Pattern -->
@@ -334,10 +315,10 @@
                       d="M9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15" />
                   </svg>
                 </span>
-                <span class="label-title">Cat's Coat Pattern</span>
+                <span class="label-title">Fur Pattern</span>
               </label>
               <select name="catCoatPattern" id="catCoatPattern">
-                <option value="">--Select your cat's fur pattern--</option>
+                <option value=""></option>
                 <option value="tuxedo">Tuxedo (Black and White)</option>
                 <option value="tabby">Tabby (Striped)</option>
                 <option value="orange">Orange</option>
@@ -346,8 +327,6 @@
                 <option value="calico">Calico</option>
                 <option value="siamese">Siamese</option>
               </select>
-
-              <p class="error-message">Error Message</p>
             </div>
           </fieldset>
 
@@ -396,27 +375,45 @@
               </p>
 
               <div class="checkbox-group">
-                <input type="checkbox" name="cat-activity" id="naps" />
+                <input
+                  type="checkbox"
+                  name="catActivity"
+                  id="naps"
+                  value="naps" />
                 <label for="naps">Naps</label>
               </div>
               <div class="checkbox-group">
-                <input type="checkbox" name="cat-activity" id="zoomies" />
+                <input
+                  type="checkbox"
+                  name="catActivity"
+                  id="zoomies"
+                  value="zoomies" />
                 <label for="zoomies">Zoomies</label>
               </div>
               <div class="checkbox-group">
-                <input type="checkbox" name="cat-activity" id="birdWatch" />
+                <input
+                  type="checkbox"
+                  name="catActivity"
+                  id="birdWatch"
+                  value="bird watching" />
                 <label for="birdWatch">Bird Watching</label>
               </div>
               <div class="checkbox-group">
-                <input type="checkbox" name="cat-activity" id="footAmbush" />
+                <input
+                  type="checkbox"
+                  name="catActivity"
+                  id="footAmbush"
+                  value="foot ambush" />
                 <label for="footAmbush">Foot Ambush</label>
               </div>
               <div class="checkbox-group">
-                <input type="checkbox" name="cat-activity" id="snuggling" />
+                <input
+                  type="checkbox"
+                  name="catActivity"
+                  id="snuggling"
+                  value="snuggling" />
                 <label for="snuggling">Snuggling</label>
               </div>
-
-              <p class="error-message">Error Message</p>
             </div>
 
             <div class="input-group">
@@ -448,8 +445,6 @@
                 max="24"
                 id="catNapHours"
                 name="catNapHours" />
-
-              <p class="error-message">Error Message</p>
             </div>
 
             <div class="range-group">
@@ -481,8 +476,6 @@
                 step="1"
                 value="3"
                 list="catSpicinessMarker" />
-
-              <p class="error-message">Error Message</p>
             </div>
           </fieldset>
 
