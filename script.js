@@ -161,7 +161,12 @@ function validateForm() {
     }
 
     if (errorList.length > 0) {
-        errorList[0].scrollIntoView({ block: "center" });
+        const firstError = errorList[0];
+        if (firstError instanceof RadioNodeList || Array.isArray(firstError)) {
+            firstError[0].scrollIntoView({ block: "center" });
+        } else {
+            errorList[0].scrollIntoView({ block: "center" });
+        }
     }
 
     errorList.forEach((el) => addErrorOutline(el));
