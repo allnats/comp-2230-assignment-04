@@ -32,19 +32,16 @@
             <div class="input-group">
               <label for="ownerFirstName">First Name</label>
               <input type="text" id="ownerFirstName" name="ownerFirstName" />
-              <p class="error-message">Error Message</p>
             </div>
 
             <div class="input-group">
               <label for="ownerLastName">Last Name</label>
               <input type="text" id="ownerLastName" name="ownerLastName" />
-              <p class="error-message">Error Message</p>
             </div>
 
             <div class="input-group">
               <label for="ownerEmail">Email address</label>
               <input type="email" id="ownerEmail" name="ownerEmail" />
-              <p class="error-message">Error Message</p>
             </div>
           </fieldset>
 
@@ -55,12 +52,11 @@
             <div class="input-group">
               <label for="catName">Your Cat's Name</label>
               <input type="text" id="catName" name="catName" />
-              <p class="error-message">Error Message</p>
             </div>
 
             <!-- Cat's Gender -->
             <div class="cat-gender">
-              <p class="radio-label">Cat's Gender</p>
+              <p class="radio-label">Gender</p>
 
               <div class="radio-group">
                 <input
@@ -79,21 +75,10 @@
                   value="female" />
                 <label for="catGenderFemale">Female</label>
               </div>
-
-              <div class="radio-group">
-                <input
-                  type="radio"
-                  id="catGenderNA"
-                  name="catGender"
-                  value="NA" />
-                <label for="catGenderNA">It's complicated</label>
-              </div>
-
-              <p class="error-message">Error Message</p>
             </div>
 
             <div class="cat-age">
-              <p class="radio-label">Approximate Age</p>
+              <p class="radio-label">Age</p>
 
               <div class="radio-group">
                 <input
@@ -139,25 +124,21 @@
                   value="immortal" />
                 <label for="catAgeOld">13+</label>
               </div>
-
-              <p class="error-message">Error Message</p>
             </div>
             <div class="color-group">
               <label for="catCoatColor">Fur Color</label>
               <input
                 type="color"
                 id="catCoatColor"
-                name="catCoatColor"
+                name="catColor"
                 value="orange" />
-
-              <p class="error-message">Error Message</p>
             </div>
 
             <!-- Cat's Fur Pattern -->
             <div class="select-group">
-              <label for="catCoatPattern">Cat's Coat Pattern</label>
-              <select name="catCoatPattern" id="catCoatPattern">
-                <option value="">--Select your cat's fur pattern--</option>
+              <label for="catCoatPattern">Fur Pattern</label>
+              <select name="catPattern" id="catCoatPattern">
+                <option value=""></option>
                 <option value="tuxedo">Tuxedo (Black and White)</option>
                 <option value="tabby">Tabby (Striped)</option>
                 <option value="orange">Orange</option>
@@ -166,8 +147,6 @@
                 <option value="calico">Calico</option>
                 <option value="siamese">Siamese</option>
               </select>
-
-              <p class="error-message">Error Message</p>
             </div>
           </fieldset>
 
@@ -178,27 +157,45 @@
               <p class="checkbox-label">Your cat's favorite activities</p>
 
               <div class="checkbox-group">
-                <input type="checkbox" name="cat-activity" id="naps" />
+                <input
+                  type="checkbox"
+                  name="catActivity"
+                  id="naps"
+                  value="naps" />
                 <label for="naps">Naps</label>
               </div>
               <div class="checkbox-group">
-                <input type="checkbox" name="cat-activity" id="zoomies" />
+                <input
+                  type="checkbox"
+                  name="catActivity"
+                  id="zoomies"
+                  value="zoomies" />
                 <label for="zoomies">Zoomies</label>
               </div>
               <div class="checkbox-group">
-                <input type="checkbox" name="cat-activity" id="birdWatch" />
+                <input
+                  type="checkbox"
+                  name="catActivity"
+                  id="birdWatch"
+                  value="bird watching" />
                 <label for="birdWatch">Bird Watching</label>
               </div>
               <div class="checkbox-group">
-                <input type="checkbox" name="cat-activity" id="footAmbush" />
+                <input
+                  type="checkbox"
+                  name="catActivity"
+                  id="footAmbush"
+                  value="foot ambush" />
                 <label for="footAmbush">Foot Ambush</label>
               </div>
               <div class="checkbox-group">
-                <input type="checkbox" name="cat-activity" id="snuggling" />
+                <input
+                  type="checkbox"
+                  name="catActivity"
+                  id="snuggling"
+                  value="snuggling" />
                 <label for="snuggling">Snuggling</label>
               </div>
-
-              <p class="error-message">Error Message</p>
             </div>
 
             <div class="input-group">
@@ -211,8 +208,6 @@
                 max="24"
                 id="catNapHours"
                 name="catNapHours" />
-
-              <p class="error-message">Error Message</p>
             </div>
 
             <div class="range-group">
@@ -227,8 +222,6 @@
                 step="1"
                 value="3"
                 list="catSpicinessMarker" />
-
-              <p class="error-message">Error Message</p>
             </div>
           </fieldset>
 
