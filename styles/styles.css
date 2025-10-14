@@ -287,7 +287,12 @@ button {
   padding: var(--space-sm);
   /* background-color: #b5eeb5; */
   border-radius: 20px;
-  border: 1px solid var(--color-fg-subtext);
+  border: 2px solid var(--color-fg-subtext);
+  transition: background-color 250ms, transform 150ms;
+}
+
+button:hover {
+  transform: scale(1.07);
 }
 
 @media (width > 640px) {
