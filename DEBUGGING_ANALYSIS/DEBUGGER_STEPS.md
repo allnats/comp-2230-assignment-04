@@ -25,3 +25,21 @@ The 1st breakpoint screenshot shows `inputElements` having no values under the "
 After submitting the form and stepping over the breakpoint, we can see that `inputElements` now contains an object of all of the form's input fields.
 
 The values of `inputElements` are then destructured to their input name's for ease of access.
+
+## Validating the input fields
+
+Right after `validateForm()` has fetched all the input elements, it will immediately validate each input fields. Before validation, I declared a variable called `isValid` which is set to `true`. If set to `false`, it means that there's an invalid field which results to the form not being submitted.
+
+In addition, I also declared `errorList` variable which is an array of invalid input elements. This is initially an empty array that will be populated if there are one or more invalid inputs.
+
+**Breakpoint Analysis #3: `validateForm()`'s input validation**
+
+![Breakpoint #3](screenshots/Breakpoint03.png)
+
+At this part of `validateForm()`, we are validating whether the supplied email address is not empty and valid. Under the watched expressions, both `isValid` and `errorList` have not value because the user hasn't submitted the form yet. In this example, the user has supplied invalid email value.
+
+**Breakpoint Analysis #4: `validateForm()`'s input validation**
+
+![Breakpoint #4](screenshots/Breakpoint04.png)
+
+After submitting the form with an invalid email and stepping through the breakpoint, we can see that `isValid` is set to `false` and `errorList` now contains the invalid input element.
