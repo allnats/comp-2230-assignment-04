@@ -43,3 +43,25 @@ At this part of `validateForm()`, we are validating whether the supplied email a
 ![Breakpoint #4](screenshots/Breakpoint04.png)
 
 After submitting the form with an invalid email and stepping through the breakpoint, we can see that `isValid` is set to `false` and `errorList` now contains the invalid input element.
+
+## Adding error messages
+
+I created a separate function that handles error message creation. The function is called `addErrorMessage()`, and this is called by `validateForm()` whenever it detects an invalid input field.
+
+`addErrorMessage()` has three parameters: the input element, the input element's parent, and the error message to display.
+
+The error message is not added inside the input element, but as a new element of the input element's parent (basically a sibling).
+
+**Breakpoint Analysis #5: `addErrorMessage()` error message creation**
+
+![Breakpoint #5](screenshots/Breakpoint05.png)
+
+Like in the previous analysis, the variables in the watched expressions are empty because the user hasn't submitted their form yet. The submitted form will have an invalid email value.
+
+**Breakpoint Analysis #6 `addErrorMessage()` error message creation**
+
+![Breakpoint #6](screenshots/Breakpoint06.png)
+
+This breakpoint screenshot shows `errorElement` being created as a `p` element containing the `errorMessage` as its text content.
+
+`errorElement` will then be appended to the `inputParent`.
