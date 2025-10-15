@@ -1,3 +1,8 @@
+/**
+ * Validates the cat survey form, displays error messages, and highlights
+ * invalid fields.
+ * @returns {boolean} True if the form is valid, false otherwise.
+ */
 function validateForm() {
     let isValid = true;
     const inputElements = getFormInputElements();
@@ -19,6 +24,10 @@ function validateForm() {
     debugInputElements(inputElements);
 
     clearErrorMessages();
+
+    /**
+     * Validate the owner's first name
+     */
     if (ownerFirstName.value.trim() === "") {
         console.error("Please enter a first name.");
         addErrorMessage(
@@ -30,6 +39,9 @@ function validateForm() {
         isValid = false;
     }
 
+    /**
+     * Validate the owner's last name.
+     */
     if (ownerLastName.value.trim() === "") {
         console.error("Please enter a last name.");
         addErrorMessage(
@@ -41,6 +53,9 @@ function validateForm() {
         isValid = false;
     }
 
+    /**
+     * Validate the owner's email.
+     */
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (ownerEmail.value.trim() === "") {
         console.error("Please enter a email address");
@@ -62,6 +77,9 @@ function validateForm() {
         isValid = false;
     }
 
+    /**
+     * Validate the cat name
+     */
     if (catName.value.trim() === "") {
         console.error("Please enter your cat's name.");
         addErrorMessage(
@@ -73,6 +91,9 @@ function validateForm() {
         isValid = false;
     }
 
+    /**
+     * Validate the cat's gender
+     */
     if (catGender.value === "") {
         console.error("Please select your cat's gender.");
         addErrorMessage(
@@ -84,6 +105,9 @@ function validateForm() {
         isValid = false;
     }
 
+    /**
+     * Validate the cat's age
+     */
     if (catAge.value === "") {
         console.error("Please select your cat's age.");
         addErrorMessage(
@@ -95,6 +119,9 @@ function validateForm() {
         isValid = false;
     }
 
+    /**
+     * Validate the cat's color
+     */
     if (catColor.value === "") {
         console.error("Please select your cat's fur color.");
         addErrorMessage(
@@ -106,6 +133,9 @@ function validateForm() {
         isValid = false;
     }
 
+    /**
+     * Validate the cat's fur pattern
+     */
     if (catPattern.value === "") {
         console.error("Please select your cat's fur pattern.");
         addErrorMessage(
@@ -117,6 +147,9 @@ function validateForm() {
         isValid = false;
     }
 
+    /**
+     * Validate the cat's activities
+     */
     const checkedValues = [];
     for (const box of catActivity) {
         if (box.checked) checkedValues.push(box.value);
@@ -133,6 +166,9 @@ function validateForm() {
         isValid = false;
     }
 
+    /**
+     * Validate the cat's nap hours
+     */
     // console.log(catNapHours.value);
     if (catNapHours.value === "") {
         console.error("Please enter your cat's nap hours.");
@@ -166,6 +202,9 @@ function validateForm() {
         isValid = false;
     }
 
+    /**
+     * Validate the cat's spiciness
+     */
     if (catSpiciness.value === "") {
         console.error("Please select your cat's spiciness.");
         errorList.push(catNapHours);
@@ -177,6 +216,9 @@ function validateForm() {
         isValid = false;
     }
 
+    /**
+     * If there's an error, scroll to the first error.
+     */
     if (errorList.length > 0) {
         const firstError = errorList[0];
         if (firstError instanceof RadioNodeList || Array.isArray(firstError)) {
@@ -186,11 +228,18 @@ function validateForm() {
         }
     }
 
+    /**
+     * Add an error outline to all errors.
+     */
     errorList.forEach((el) => addErrorOutline(el));
 
     return isValid;
 }
 
+/**
+ * Logs the values and types of all input elements for debugging purposes.
+ * @param {Object} inputElements - An object containing references to form input elements.
+ */
 function debugInputElements(inputElements) {
     for (key in inputElements) {
         let value = inputElements[key].value;
@@ -207,6 +256,11 @@ function debugInputElements(inputElements) {
     }
 }
 
+/**
+ * Retrieves references to all relevant form input elements in the survey form.
+ * @returns {Object} An object mapping input names to their corresponding DOM
+ *  elements.
+ */
 function getFormInputElements() {
     const form = catSurveyForm;
     return {
@@ -224,6 +278,11 @@ function getFormInputElements() {
     };
 }
 
+/**
+ * Removes all error messages and clears aria-describedby attributes from
+ *  form fields.
+ * @returns {void}
+ */
 function clearErrorMessages() {
     // Select all elements with the .error-message class and remove them.
     const errorMessages = document.querySelectorAll(".error-message");
@@ -238,6 +297,16 @@ function clearErrorMessages() {
     inputFields.forEach((field) => field.removeAttribute("aria-describedby"));
 }
 
+/**
+ * Creates and appends an error message for a given input, and sets
+ * aria-describedby for accessibility.
+ * @param {HTMLElement} inputElement - The input element to associate the error.
+ * @param {HTMLElement} inputParent - The parent element to which the
+ *  error message will be appended.
+ * @param {string} errorMessage - The error message to display.
+ *
+ * @returns {void}
+ */
 function addErrorMessage(inputElement, inputParent, errorMessage) {
     const errorElement = document.createElement("p");
     errorElement.classList.add("error-message");
@@ -248,6 +317,12 @@ function addErrorMessage(inputElement, inputParent, errorMessage) {
     inputParent.appendChild(errorElement);
 }
 
+/**
+ * Adds an error outline to an invalid input element.
+ * @param {HTMLElement|RadioNodeList} inputElement - The input or group to highlight.
+ *
+ * @returns {void}
+ */
 function addErrorOutline(inputElement) {
     if (inputElement instanceof HTMLInputElement) {
         inputElement.classList.add("input-error");
@@ -268,6 +343,10 @@ catSurveyForm.addEventListener("submit", (event) => {
     }
 });
 
+/**
+ * Adds an event lister to all inputs that will automatically remove their
+ * error outline on "focus".
+ */
 const inputGroup = document.querySelectorAll(".input-group input");
 inputGroup.forEach((el) => {
     el.addEventListener("focus", () => el.classList.remove("input-error"));
