@@ -24,7 +24,7 @@
       </header>
 
       <!-- Main Survey Content -->
-      <main class="survey-container">
+      <main role="main" class="survey-container">
         <form action="#" id="catSurveyForm" novalidate>
           <!-- Owner Information -->
           <fieldset class="owner-info">
@@ -154,8 +154,8 @@
             </div>
 
             <!-- Cat's Gender -->
-            <div class="cat-gender">
-              <p class="radio-label">
+            <div class="cat-gender" aria-labelledby="cat-gender-label">
+              <p class="radio-label" id="cat-gender-label">
                 <span class="label-icon">
                   <svg
                     aria-hidden="true"
@@ -197,8 +197,8 @@
               </div>
             </div>
 
-            <div class="cat-age">
-              <p class="radio-label">
+            <div class="cat-age" aria-labelledby="cat-age-label">
+              <p class="radio-label" id="cat-age-label">
                 <span class="label-icon">
                   <svg
                     aria-hidden="true"
@@ -364,8 +364,8 @@
               <span class="form-section-title">Cat Behavior</span>
             </legend>
             <!-- Cat's Favorite Activity -->
-            <div class="cat-activity">
-              <p class="checkbox-label">
+            <div class="cat-activity" aria-labelledby="cat-activity-label">
+              <p class="checkbox-label" id="cat-activity-label">
                 <span class="label-icon">
                   <svg
                     aria-hidden="true"
@@ -484,9 +484,12 @@
                 type="range"
                 id="catSpiciness"
                 name="catSpiciness"
+                aria-valuemin="1"
                 min="1"
+                aria-valuemax="5"
                 max="5"
                 step="1"
+                aria-valuenow="3"
                 value="3"
                 list="catSpicinessMarker" />
             </div>
