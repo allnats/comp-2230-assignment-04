@@ -274,7 +274,7 @@ select {
 
 .cat-activity {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .cat-activity > .checkbox-label {
@@ -318,6 +318,10 @@ button:hover {
 
   .input-group:has(#catName) {
     grid-column: span 2;
+  }
+
+  .cat-activity {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
